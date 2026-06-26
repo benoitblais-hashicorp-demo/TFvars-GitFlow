@@ -83,6 +83,16 @@ Example target path shape:
 - Use clear environment labels in file names when helpful.
 - Keep branch names and environment folder names consistent.
 
+## Terraform File Conventions
+
+The root module uses these canonical files:
+
+- versions.tf: Terraform version constraint.
+- variables.tf: all input variables with type and description.
+- outputs.tf: all outputs in alphabetical order.
+
+The `environment` variable is the primary input variable. Its value is always sourced from the environment-scoped tfvars file targeted by the workspace. It must be validated against the allowed values: dev, test, prod.
+
 ## Out of Scope
 
 - Do not introduce unrelated architecture patterns or platform migrations.

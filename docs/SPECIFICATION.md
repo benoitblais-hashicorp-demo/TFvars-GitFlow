@@ -73,13 +73,11 @@ Rules:
 
 ## 6. Repository Conventions
 
-Root Terraform module should use canonical filenames:
+Root Terraform module uses these files:
 
-- main.tf
-- variables.tf
-- outputs.tf
-- providers.tf
-- versions.tf
+- versions.tf: Terraform version constraint.
+- variables.tf: all input variables with type and description.
+- outputs.tf: all outputs in alphabetical order.
 
 Documentation files:
 
@@ -104,6 +102,10 @@ Workspace execution always resolves to one explicit tfvars file path.
 ### FR-4 Controlled Change Scope
 
 Pull requests should modify only the environment and branch relevant to the stated change.
+
+### FR-5 Environment Variable and Output
+
+The root module defines an `environment` input variable sourced from the active tfvars file. The value is validated against allowed values (dev, test, prod) and exposed via an `environment` output. This output confirms which environment the workspace is targeting at plan and apply time.
 
 ## 8. Security Requirements
 
