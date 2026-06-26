@@ -87,11 +87,14 @@ Example target path shape:
 
 The root module uses these canonical files:
 
-- versions.tf: Terraform version constraint.
+- versions.tf: Terraform version constraint and required providers.
 - variables.tf: all input variables with type and description.
 - outputs.tf: all outputs in alphabetical order.
+- main.tf: all resource definitions.
 
 The `environment` variable is the primary input variable. Its value is always sourced from the environment-scoped tfvars file targeted by the workspace. It must be validated against the allowed values: dev, test, prod.
+
+The `random_integer` resource in main.tf demonstrates a generic resource pattern. Its range is controlled by `random_min` and `random_max` input variables, both defaulting to 1 and 100 respectively.
 
 ## Out of Scope
 
