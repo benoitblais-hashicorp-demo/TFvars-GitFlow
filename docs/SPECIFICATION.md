@@ -75,9 +75,10 @@ Rules:
 
 Root Terraform module uses these files:
 
-- versions.tf: Terraform version constraint.
+- versions.tf: Terraform version constraint and required providers.
 - variables.tf: all input variables with type and description.
 - outputs.tf: all outputs in alphabetical order.
+- main.tf: all resource definitions.
 
 Documentation files:
 
@@ -106,7 +107,9 @@ Pull requests should modify only the environment and branch relevant to the stat
 ### FR-5 Environment Variable and Output
 
 The root module defines an `environment` input variable sourced from the active tfvars file. The value is validated against allowed values (dev, test, prod) and exposed via an `environment` output. This output confirms which environment the workspace is targeting at plan and apply time.
+### FR-6 Random Integer Resource
 
+The root module includes a `random_integer` resource defined in `main.tf` to demonstrate a basic resource pattern. The range is controlled by `random_min` and `random_max` input variables. The generated value is exposed via a `random_integer` output.
 ## 8. Security Requirements
 
 - Never commit secrets in tfvars files.

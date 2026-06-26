@@ -7,3 +7,15 @@ variable "environment" {
     error_message = "environment must be one of: dev, test, prod."
   }
 }
+
+variable "random_min" {
+  description = "Minimum value for the random integer."
+  type        = number
+  default     = 1
+}
+
+variable "random_max" {
+  description = "Maximum value for the random integer."
+  type        = number
+  default     = 100
+}
