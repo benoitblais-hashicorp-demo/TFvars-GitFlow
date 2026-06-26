@@ -109,6 +109,8 @@ The following requirements are needed by this module:
 
 - <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (~> 1.9)
 
+- <a name="requirement_random"></a> [random](#requirement\_random) (~> 3.6)
+
 ## Modules
 
 No modules.
@@ -125,11 +127,29 @@ Type: `string`
 
 ## Optional Inputs
 
-No optional inputs.
+The following input variables are optional (have default values):
+
+### <a name="input_random_max"></a> [random\_max](#input\_random\_max)
+
+Description: Maximum value for the random integer.
+
+Type: `number`
+
+Default: `100`
+
+### <a name="input_random_min"></a> [random\_min](#input\_random\_min)
+
+Description: Minimum value for the random integer.
+
+Type: `number`
+
+Default: `1`
 
 ## Resources
 
-No resources.
+The following resources are used by this module:
+
+- [random_integer.example](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/integer) (resource)
 
 ## Outputs
 
@@ -138,6 +158,10 @@ The following outputs are exported:
 ### <a name="output_environment"></a> [environment](#output\_environment)
 
 Description: The active deployment environment resolved from the workspace tfvars file.
+
+### <a name="output_random_integer"></a> [random\_integer](#output\_random\_integer)
+
+Description: A random integer generated within the configured min/max range.
 
 <!-- markdownlint-enable -->
 <!-- END_TF_DOCS -->
