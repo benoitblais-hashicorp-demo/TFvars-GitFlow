@@ -34,12 +34,12 @@ Required pattern:
 
 ```text
 environment/
-	dev/
-		*.tfvars
-	test/
-		*.tfvars
-	prod/
-		*.tfvars
+  dev/
+    *.tfvars
+  test/
+    *.tfvars
+  prod/
+    *.tfvars
 ```
 
 Notes:

@@ -128,7 +128,7 @@ Documentation and process enforce dev -> test -> main as default promotion flow.
 
 ### AC-2 tfvars Layout
 
-Environment variable files follow environment/<env>/*.tfvars pattern.
+Environment variable files follow `environment/<env>/*.tfvars` pattern.
 
 ### AC-3 Workspace Targeting
 

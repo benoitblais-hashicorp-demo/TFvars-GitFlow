@@ -20,7 +20,7 @@ This repository demonstrates how to manage Terraform variable files across envir
 ## Demo Components
 
 | Component | Description |
-|---|---|
+| --- | --- |
 | `environment/dev/app.tfvars` | Variable values for the dev environment |
 | `environment/test/app.tfvars` | Variable values for the test environment |
 | `environment/prod/app.tfvars` | Variable values for the prod environment |
@@ -53,7 +53,7 @@ This demo illustrates a simple, repeatable pattern for managing environment-spec
 
 After a successful `terraform apply` with the dev workspace targeting `environment/dev/app.tfvars`:
 
-```
+```text
 Outputs:
 
 environment = "dev"
@@ -68,21 +68,21 @@ Each environment requires one HCP Terraform workspace. The workspace must be con
 ### dev workspace
 
 | Variable | Type | Value |
-|---|---|---|
+| --- | --- | --- |
 | `TF_CLI_ARGS_plan` | Environment | `-var-file=environment/dev/app.tfvars` |
 | `TF_CLI_ARGS_apply` | Environment | `-var-file=environment/dev/app.tfvars` |
 
 ### test workspace
 
 | Variable | Type | Value |
-|---|---|---|
+| --- | --- | --- |
 | `TF_CLI_ARGS_plan` | Environment | `-var-file=environment/test/app.tfvars` |
 | `TF_CLI_ARGS_apply` | Environment | `-var-file=environment/test/app.tfvars` |
 
 ### prod workspace
 
 | Variable | Type | Value |
-|---|---|---|
+| --- | --- | --- |
 | `TF_CLI_ARGS_plan` | Environment | `-var-file=environment/prod/app.tfvars` |
 | `TF_CLI_ARGS_apply` | Environment | `-var-file=environment/prod/app.tfvars` |
 
@@ -99,4 +99,3 @@ No cloud provider is required for this demo. The Terraform configuration only re
 ### Provider Authentication
 
 No provider authentication is required for this demo.
-
